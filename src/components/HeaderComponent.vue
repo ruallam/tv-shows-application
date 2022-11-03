@@ -20,7 +20,6 @@ export default {
     },
     methods: {
       searchShow() {
-        console.log(this.searchName)
         this.$router.push({ path: `/search/${this.searchName}` });
       }
     }

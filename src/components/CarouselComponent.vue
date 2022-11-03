@@ -43,11 +43,10 @@
 import { mapState } from 'vuex';
 import { mapActions } from 'vuex';
 export default {
+    name:'CarouselComponent',
     data() {
         return {
             imagesArray: ["https://static.tvmaze.com/uploads/images/original_untouched/294/737399.jpg", "https://static.tvmaze.com/uploads/images/original_untouched/294/737400.jpg", "https://static.tvmaze.com/uploads/images/original_untouched/303/758502.jpg"],
-            // ArrayImages:[]
-
         }
     },
     computed: {
@@ -59,9 +58,9 @@ export default {
     },
     created() {
         this.getCorouselImages();
-
-        // this.ArrayImages.push(this.randomCarouselShows[0].imageUrl)
-        // console.log(this.ArrayImages,"AI")
+        if(this.randomCarouselShows.length) {
+            console.log(this.randomCarouselShows)
+        }
     }
 }
 </script>

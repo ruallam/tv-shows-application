@@ -27,8 +27,6 @@ export default {
     async created(){
         this.searchName = this.$route.params.searchName
     }
-
-
 }
 </script>
 

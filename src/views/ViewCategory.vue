@@ -4,7 +4,6 @@
             <card-component :showDetails="show"/>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -25,8 +24,6 @@ export default {
     created() {
         this.categoryName = this.$route.params.genreName;
     },
-
-
 }
 </script>
 

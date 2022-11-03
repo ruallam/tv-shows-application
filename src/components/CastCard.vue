@@ -1,7 +1,5 @@
 <template>
     <div v-if="castDetails.length">
-
-
     <div v-for="cast,i in castDetails" :key="i">
   <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">

@@ -35,11 +35,6 @@
 import { mapActions, mapState } from 'vuex';
 import ModalComponent from '@/components/ModalComponent.vue';
 export default {
-    data() {
-        return {
-            // genresString: ""
-        }
-    },
     computed: {
         ...mapState(["show", "error"]),
     },
@@ -49,7 +44,6 @@ export default {
     methods: {
         ...mapActions(["getShowById","getCastById"]),
         displayImage(show) {
-            // this.genresString = show.genres.join("|")
             return show?.image?.original || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax9rQ-FuuaF4BvPj3GHIhMYriMIhujaOfkQ&usqp=CAU";
         }
     },
@@ -57,9 +51,7 @@ export default {
         this.id = this.$route.params.id;
         console.log(this.id, "id val")
         this.getShowById(this.id);
-
     }
-
 }
 </script>
 

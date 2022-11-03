@@ -21,7 +21,6 @@ export default {
         goToHome() {
             this.SET_ERROR_TO_FALSE();
             this.$router.push('/')
-
         }
     }
 }
@@ -32,6 +31,4 @@ export default {
 .container {
     margin-top: 10rem;
 }
-    
-
 </style>

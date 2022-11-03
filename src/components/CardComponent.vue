@@ -1,7 +1,6 @@
 <template>
-    <!-- <div @click="showDetails(showDetails)"> -->
-        <router-link class="text-style" :to="{ name: 'ShowDetails', params: { id: showDetails.id } }">
-        <div class="card mx-auto" >
+    <router-link class="text-style" :to="{ name: 'ShowDetails', params: { id: showDetails.id } }">
+        <div class="card mx-auto">
             <img :src="displayimage(showDetails)" class="card-img-top" alt="..." style="height:248px">
             <div class="card-body" style="text-decoration:none">
                 <div v-if="showDetails.rating.average" class="ribbon">
@@ -10,13 +9,12 @@
                 <div class="card-title" style="text-decoration:none">{{ showDetails.name }}</div>
             </div>
         </div>
-        </router-link>
-    <!-- </div> -->
+    </router-link>
 </template>
 
 <script>
-// import PopU
 export default {
+    name: 'CardComponent',
     props: {
         showDetails: { type: Object }
     },
@@ -41,9 +39,10 @@ export default {
     right: 0px;
     border-radius: 3px 10px 3px 3px;
 }
+
 .card {
-    width:11rem;
-    margin:8px
+    width: 11rem;
+    margin: 8px
 }
 
 .text-style {

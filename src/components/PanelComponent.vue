@@ -8,25 +8,13 @@
 
 <script>
 import CardComponent from './CardComponent.vue';
-// import { mapState } from 'vuex'
 export default {
     components: {
         CardComponent
     },
     props: {
         showsList: {type: Array}
-    },
-    data(){
-        return {
-        }
-    },
-    computed:{
-        // ...mapState(["showsCategorized"])
-    },
-    methods: {
-
     }
-
 }
 </script>
 

@@ -1,6 +1,5 @@
 import httpClient from "./common/index";
 
-
 const getShows = () => {
     return httpClient.get("/shows").then(res => res.data);
 };

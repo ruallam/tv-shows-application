@@ -16,14 +16,8 @@ import PanelComponent from '../components/PanelComponent.vue';
 export default {
     name: 'DashboardView',
     components: {
-        // Cardcomponent,
         PanelComponent,
         CarouselComponent
-    },
-    data() {
-        return {
-
-        }
     },
     methods: {
         ...mapActions(["getShows"]),
