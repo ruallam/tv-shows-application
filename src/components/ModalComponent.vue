@@ -21,6 +21,7 @@
 <script>
 import CastCard from './CastCard.vue'
 export default {
+    name:'ModalComponent',
     components: {
         CastCard
     }

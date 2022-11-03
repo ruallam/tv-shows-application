@@ -58,9 +58,6 @@ export default {
     },
     created() {
         this.getCorouselImages();
-        if(this.randomCarouselShows.length) {
-            console.log(this.randomCarouselShows)
-        }
     }
 }
 </script>

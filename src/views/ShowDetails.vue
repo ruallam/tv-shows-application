@@ -18,12 +18,13 @@
                 Official website:
                 <a :href="show.officialSite">{{ show.officialSite }}</a>
             </h4>
-            <p v-html="show.summary"></p>
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="getCastById(id)">
                 View Cast Info
             </button>
             <ModalComponent/>
+            <p v-html="show.summary" class="text-justify"></p>
+            <!-- Button trigger modal -->
+            
             
         </div>
 
@@ -35,6 +36,7 @@
 import { mapActions, mapState } from 'vuex';
 import ModalComponent from '@/components/ModalComponent.vue';
 export default {
+    name:'ShowDetails',
     computed: {
         ...mapState(["show", "error"]),
     },
@@ -49,7 +51,6 @@ export default {
     },
     created() {
         this.id = this.$route.params.id;
-        console.log(this.id, "id val")
         this.getShowById(this.id);
     }
 }
@@ -62,6 +63,10 @@ img {
     margin: 10px;
     border-radius: 10px;
     margin-top: 0px;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 .margin {

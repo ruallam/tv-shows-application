@@ -1,5 +1,5 @@
 <template>
-    <div class="row" v-if="getShowsByCat(categoryName)">
+    <div class="row" >
         <div class="col-12 col-sm-4 col-md-6 col-lg-2" v-for="(show, i) in getShowsByCat(categoryName)" :key="i">
             <card-component :showDetails="show"/>
         </div>
@@ -10,6 +10,7 @@
 import { mapGetters } from 'vuex';
 import CardComponent from '../components/CardComponent.vue'
 export default {
+    name:'ViewCategory',
     data() {
         return {
             categoryName: "",

@@ -130,11 +130,9 @@ jest.mock('@/services/index')
 jest.mock('@/store/state.js')
 
 describe("In Actions", () => {
-    let state;
     let commit;
     let dispatch;
-    beforeAll(()=> {
-        
+    beforeAll(()=> {  
         commit = jest.fn(),
         dispatch = jest.fn()
     });
@@ -143,9 +141,6 @@ describe("In Actions", () => {
         await showServices.getShows.mockResolvedValue([mockedShowData])
         await actions.getShows({commit,dispatch});
         expect(dispatch).toHaveBeenCalledWith('filterShowsBasedOnGenres',[mockedShowData])
-        // await actions.filterShowsBasedOnGenres({dispatch});
-        // expect(dispatch).toHaveBeenCalledWith(sortGenreByName,[{genreName:'Action',showsList:[mockedShowData]}])
-
     })
 
     it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
@@ -155,20 +150,13 @@ describe("In Actions", () => {
         expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
     })
 
-    // it('it should commit error as true when getShows() is called', async() => {
-    //     const error = new Error("Async error");
-    //     await showServices.getShows.mockRejectedValue(error)
-    //     await actions.getShows({commit,dispatch});
-    //     expect(commit).toHaveBeenCalledWith('SET_ERROR')
-    // })
-
     it('it should dispatch sortGenreByName when getShows() is called', async() => {
         await actions.filterShowsBasedOnGenres({dispatch},mockedShowsDataArray);
         expect(dispatch).toHaveBeenCalledWith('sortGenreByName',filteredArrayExpected)
     })
 
     it('it should dispatch sortGenreByName when getShows() is called', async() => {
-        await actions.sortGenreByName({commit},filteredArrayExpected);
+        await actions.sortGenreByName({commit},[{genreName:'Action',showsList:[]},{genreName:'Drama',showsList:[]}]);
         expect(dispatch).toHaveBeenCalledWith('sortGenreByName',filteredArrayExpected)
     })
 

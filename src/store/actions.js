@@ -10,11 +10,9 @@ export default {
         }
     },
     filterShowsBasedOnGenres({ dispatch }, data) {
-        console.log(data,"in 13")
         const popularShows = data.filter((show) => {
             return show.rating.average >= 8.2 ? show : "";
         });
-        // console.log(popularShows, "pop")
         let genreList = [];
         let showsArrayList = [];
         data.map(show => {
@@ -33,12 +31,9 @@ export default {
                     }
                 });
         })
-        console.log(showsArrayList,popularShows, "in 35")
-
         dispatch("sortGenreByName", { showsArrayList, popularShows })
     },
     sortGenreByName({ commit }, data) {
-        // console.log(data, "data")
         const sortedArray = data.showsArrayList.sort((show1, show2) => {
             var name1 = show1.genreName.toUpperCase();
             var name2 = show2.genreName.toUpperCase();
@@ -52,24 +47,19 @@ export default {
             else return 0;
         })
         sortedArray.unshift({ genreName: "Top 50 Shows", showsList: data.popularShows.slice(0, 50) })
-        // console.log(sortedArray, "sortedArray")
         commit("SET_SHOW_CATEGORIEZED", sortedArray)
     },
     async getShowById({ commit }, id) {
         try {
             const ShowById = await services.getShowById(id);
-            console.log(ShowById, "in enifjek")
             commit("SET_SHOW", ShowById)
         } catch (error) {
-            console.log("in else")
             commit("SET_ERROR", error)
         }
     },
     async getSearchResults({ commit }, searchName) {
-        console.log(searchName, "searchName")
         try {
             const searchedShows = await services.getShowsByKeyword(searchName);
-            console.log(searchedShows, "searchedShows")
             commit("SET_SEARCHEDSHOWS", searchedShows)
         } catch (error) {
             commit("SET_ERROR", error)
@@ -91,9 +81,7 @@ export default {
                         CarouselShows.push({ id: id, imageUrl: url.resolutions.original.url })
                     }
                 }
-                console.log(id,"id print actiosn")
             }
-            console.log(CarouselShows, "CarouselShows")
             commit("SET_CAROUSELSHOWS", CarouselShows)
         } catch (error) {
             commit("SET_ERROR", error)
@@ -102,7 +90,6 @@ export default {
     async getCastById({ commit }, id) {
         try {
             const CastById = await services.getCastById(id);
-            console.log(CastById, "Cast")
             commit("SET_CASTDETAILS", CastById)
         } catch (error) {
             commit("SET_ERROR", error)

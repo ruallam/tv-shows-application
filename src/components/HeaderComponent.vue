@@ -2,7 +2,7 @@
   <nav class="navbar top-fixed">
   <div class="container-fluid">
     <a class="navbar-text text-deocation-none" href="/">TVFlix</a>
-      <form class="d-flex dropdown" role="search" >
+      <form class="d-flex" role="search" >
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchName" >
         <button class="btn btn-success" type="submit" @click="searchShow()">Search</button>
       </form>
@@ -39,11 +39,6 @@ export default {
 }
 .navbar-text {
   color: aliceblue;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
 }
 
 .top-fixed {

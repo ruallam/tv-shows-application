@@ -15,14 +15,10 @@ describe('In getters', () => {
 
     it('in getters it should do something', ()=> {
         const expected = getters.getShowsByCat(state)('Drama');
-        console.log(expected)
         expect(expected).toEqual([mockedShowData])
-
-        // console.log(expected).toBe(genreMapName)
     })
     it('in getters it should do something', ()=> {
         const expected = getters.getShowsByCat(state)('Action');
-        console.log(expected)
         expect(expected).toEqual([])
     })
 })

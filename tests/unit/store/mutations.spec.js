@@ -20,7 +20,6 @@ describe('Store Motations', ()=>{
     })
 
     it("should set showsCategorized when SET_SHOW_CATEGORIEZED is called", () => {
-        console.log("in 19")
         const expected = 'ShowsList';
         mutations.SET_SHOW_CATEGORIEZED(state,expected)
         expect(state.showsCategorized).toEqual(expected)

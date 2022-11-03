@@ -6,7 +6,6 @@ export default {
                 showList = category.showsList
             }
         })
-        console.log(showList, "state.showsCategorized")
         return showList
     }
 }

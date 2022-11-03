@@ -9,6 +9,7 @@
 <script>
 import CardComponent from './CardComponent.vue';
 export default {
+    name:'PanelComponent',
     components: {
         CardComponent
     },

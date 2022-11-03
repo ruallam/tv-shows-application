@@ -14,7 +14,7 @@ import CarouselComponent from '@/components/CarouselComponent.vue';
 // import Cardcomponent from '../components/CardComponent.vue';
 import PanelComponent from '../components/PanelComponent.vue';
 export default {
-    name: 'DashboardView',
+    name: 'DashboardPage',
     components: {
         PanelComponent,
         CarouselComponent
