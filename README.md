@@ -34,7 +34,7 @@ npm run build
 
 ### Run your unit tests
 ```
-npm run test:unit
+npm run test
 ```
 
 ### Lints and fixes files
@@ -76,3 +76,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Release Notes
+- **0.5.0** - Final Commit
+- **0.4.0** - Added formatting changes 
+- **0.3.0** - Added test cases and made few changes to the code
+- **0.2.0** - Pushing the Project code to git
+- **0.1.0** - Initial Project Setup init

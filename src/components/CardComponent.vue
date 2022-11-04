@@ -6,7 +6,7 @@
                 <div v-if="showDetails.rating.average" class="ribbon">
                     <span style="font-size:12px">{{ showDetails.rating.average }}</span><i class="fa fa-star fa-xs"></i>
                 </div>
-                <div class="card-title" style="text-decoration:none">{{ showDetails.name }}</div>
+                <div class="card-title">{{ showDetails.name }}</div>
             </div>
         </div>
     </router-link>
@@ -49,4 +49,14 @@ export default {
     transform: scale(1.03);
     box-shadow: 0 0 5px #f0f0f0;
 }
+.card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 140px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="row" v-if="getSearchResults(searchName)">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-2" v-for="(show, i) in searchedShows" :key="i">
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2" v-for="(show, i) in searchedShows" :key="i">
             <card-component :showDetails="show.show"/>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="row" v-if="getShowsByCat(categoryName)">
-        <div class="col-12 col-sm-4 col-md-6 col-lg-2" v-for="(show, i) in getShowsByCat(categoryName)" :key="i">
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2" v-for="(show, i) in getShowsByCat(categoryName)" :key="i">
             <card-component :showDetails="show"/>
         </div>
     </div>
@@ -33,6 +33,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@media screen and (max-width: 390px) {
+    .card {
+    width: 20rem ;
+    margin: 8px
+}
+    .card-title {
+        text-decoration: none;
+    }
+}
 </style>
