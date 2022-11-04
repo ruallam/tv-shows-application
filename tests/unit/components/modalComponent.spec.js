@@ -1,8 +1,5 @@
 import modalComponent from "@/components/modalComponent"
 import { shallowMount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from "vue-router"
-import routes from '@/router/routes'
-import mockedData from '../mockedData/mocked-data'
 import castCardComponent from '@/components/castCard'
 
 

@@ -39,18 +39,13 @@ export default {
     right: 0px;
     border-radius: 3px 10px 3px 3px;
 }
-
 .card {
     width: 11rem;
     margin: 8px
-}
-
-.text-style {
+}.text-style {
     text-decoration: none;
     color: black
-}
-
-.card:hover {
+}.card:hover {
     transform: scale(1.03);
     box-shadow: 0 0 5px #f0f0f0;
 }

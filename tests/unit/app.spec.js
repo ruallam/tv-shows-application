@@ -1,6 +1,5 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import App from '@/App.vue';
-import headerComponent from '@/components/headerComponent';
 import pageNotFound from '@/views/PageNotFound';
 import { createStore } from 'vuex'
 import routes from '@/router/routes';

@@ -1,10 +1,6 @@
 import showDetails from '@/views/ShowDetails'
 import { shallowMount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from "vue-router"
-import routes from '@/router/routes'
 import {mockedShowData} from '../mockedData/mocked-data'
-import panelComponent from '@/components/PanelComponent'
-import carouselComponent from '@/components/carouselComponent'
 import { createStore } from 'vuex'
 
 let mockState = {show:mockedShowData,error:false}

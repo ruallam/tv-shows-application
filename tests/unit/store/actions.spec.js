@@ -1,7 +1,6 @@
 import actions from '@/store/actions';
 import showServices from '@/services/index';
-import services from '@/services/index';
-import { mockedShowData, mockedCastData, mockImageData, mockedShowsDataArray} from '../mockedData/mocked-data'
+import { mockedShowData, mockedCastData, mockImageData, mockedShowsDataArray } from '../mockedData/mocked-data'
 
 
 const filteredArrayExpected = [
@@ -132,83 +131,83 @@ jest.mock('@/store/state.js')
 describe("In Actions", () => {
     let commit;
     let dispatch;
-    beforeAll(()=> {  
+    beforeAll(() => {
         commit = jest.fn(),
-        dispatch = jest.fn()
+            dispatch = jest.fn()
     });
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         await showServices.getShows.mockResolvedValue([mockedShowData])
-        await actions.getShows({commit,dispatch});
-        expect(dispatch).toHaveBeenCalledWith('filterShowsBasedOnGenres',[mockedShowData])
+        await actions.getShows({ commit, dispatch });
+        expect(dispatch).toHaveBeenCalledWith('filterShowsBasedOnGenres', [mockedShowData])
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         const error = new Error("Async error");
         await showServices.getShows.mockRejectedValue(error)
-        await actions.getShows({commit,dispatch});
-        expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
+        await actions.getShows({ commit, dispatch });
+        expect(commit).toHaveBeenCalledWith('SET_ERROR', error)
     })
 
-    it('it should dispatch sortGenreByName when getShows() is called', async() => {
-        await actions.filterShowsBasedOnGenres({dispatch},mockedShowsDataArray);
-        expect(dispatch).toHaveBeenCalledWith('sortGenreByName',filteredArrayExpected)
+    it('it should dispatch sortGenreByName when getShows() is called', async () => {
+        await actions.filterShowsBasedOnGenres({ dispatch }, mockedShowsDataArray);
+        expect(dispatch).toHaveBeenCalledWith('sortGenreByName', filteredArrayExpected)
     })
 
-    it('it should dispatch sortGenreByName when getShows() is called', async() => {
-        await actions.sortGenreByName({commit},[{genreName:'Action',showsList:[]},{genreName:'Drama',showsList:[]}]);
-        expect(dispatch).toHaveBeenCalledWith('sortGenreByName',filteredArrayExpected)
+    it('it should dispatch sortGenreByName when getShows() is called', async () => {
+        await actions.sortGenreByName({ commit }, [{ genreName: 'Action', showsList: [] }, { genreName: 'Drama', showsList: [] }]);
+        expect(dispatch).toHaveBeenCalledWith('sortGenreByName', filteredArrayExpected)
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         const error = new Error("Async error");
         await showServices.getShowById.mockRejectedValue(error)
-        await actions.getShowById({commit,dispatch});
-        expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
+        await actions.getShowById({ commit, dispatch });
+        expect(commit).toHaveBeenCalledWith('SET_ERROR', error)
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         await showServices.getShowById.mockResolvedValue([mockedShowData])
-        await actions.getShowById({commit,dispatch});
-        expect(commit).toHaveBeenCalledWith('SET_SHOW',[mockedShowData])
+        await actions.getShowById({ commit, dispatch });
+        expect(commit).toHaveBeenCalledWith('SET_SHOW', [mockedShowData])
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         await showServices.getShowsByKeyword.mockResolvedValue([mockedShowData])
-        await actions.getSearchResults({commit});
-        expect(commit).toHaveBeenCalledWith('SET_SEARCHEDSHOWS',[mockedShowData])
+        await actions.getSearchResults({ commit });
+        expect(commit).toHaveBeenCalledWith('SET_SEARCHEDSHOWS', [mockedShowData])
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         const error = new Error("Async error");
         await showServices.getShowsByKeyword.mockRejectedValue(error)
-        await actions.getSearchResults({commit});
-        expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
+        await actions.getSearchResults({ commit });
+        expect(commit).toHaveBeenCalledWith('SET_ERROR', error)
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         const error = new Error("Async error");
         await showServices.getCastById.mockRejectedValue(error)
-        await actions.getCastById({commit,dispatch});
-        expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
+        await actions.getCastById({ commit, dispatch });
+        expect(commit).toHaveBeenCalledWith('SET_ERROR', error)
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         await showServices.getCastById.mockResolvedValue([mockedCastData])
-        await actions.getCastById({commit,dispatch});
-        expect(commit).toHaveBeenCalledWith('SET_CASTDETAILS',[mockedCastData])
+        await actions.getCastById({ commit, dispatch });
+        expect(commit).toHaveBeenCalledWith('SET_CASTDETAILS', [mockedCastData])
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         const error = new Error("Async error");
         await showServices.getImagesById.mockRejectedValue(error)
-        await actions.getCorouselImages({commit});
-        expect(commit).toHaveBeenCalledWith('SET_ERROR',error)
+        await actions.getCorouselImages({ commit });
+        expect(commit).toHaveBeenCalledWith('SET_ERROR', error)
     })
 
-    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async() => {
+    it('it should dispatch filterShowsBasedOnGenres when getShows() is called', async () => {
         await showServices.getImagesById.mockResolvedValue(mockImageData)
-        await actions.getCorouselImages({commit});
+        await actions.getCorouselImages({ commit });
         expect(commit).toHaveBeenCalled()
     })
 })

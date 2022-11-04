@@ -1,12 +1,7 @@
 import headerComponent from "@/components/headerComponent"
 import { shallowMount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from "vue-router"
-import routes from '@/router/routes'
 
-// const router = createRouter({
-//     history: createMemoryHistory(),
-//     routes: routes
-// })
+
 
 const mockRoute = {
     params: {

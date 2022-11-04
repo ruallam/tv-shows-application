@@ -11,7 +11,6 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import CarouselComponent from '@/components/CarouselComponent.vue';
-// import Cardcomponent from '../components/CardComponent.vue';
 import PanelComponent from '../components/PanelComponent.vue';
 export default {
     name: 'DashboardPage',
@@ -45,7 +44,6 @@ export default {
     text-decoration: none;
     color: white
 }
-
 .text-style:hover {
     color:#0d6efd;
 }

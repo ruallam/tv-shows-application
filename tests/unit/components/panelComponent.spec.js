@@ -1,7 +1,5 @@
 import panelComponent from "@/components/panelComponent"
 import { shallowMount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from "vue-router"
-import routes from '@/router/routes'
 import mockedData from '../mockedData/mocked-data'
 import cardComponent from '@/components/cardComponent'
 

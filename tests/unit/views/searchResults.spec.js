@@ -1,10 +1,6 @@
 import searchResults from '@/views/SearchResults'
 import { shallowMount } from '@vue/test-utils'
-import { createRouter, createMemoryHistory } from "vue-router"
-import routes from '@/router/routes'
 import {mockedShowData} from '../mockedData/mocked-data'
-import panelComponent from '@/components/PanelComponent'
-import carouselComponent from '@/components/carouselComponent'
 import { createStore } from 'vuex'
 
 let mockState = {searchedShows:[{show:mockedShowData},{show:mockedShowData},{show:mockedShowData}]}
@@ -36,9 +32,11 @@ describe('In Dashboard Component Component', () => {
             }
         })
     })
+    
     afterEach(() => {
         wrapper.unmount()
     })
+
     it("Is a vue instance", () => {
         expect(wrapper.vm).toBeTruthy();
     });
@@ -47,6 +45,4 @@ describe('In Dashboard Component Component', () => {
         
         expect(wrapper.html()).toContain("</div>");
     });
-
- 
 })
