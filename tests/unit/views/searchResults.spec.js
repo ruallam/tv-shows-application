@@ -19,7 +19,7 @@ const store = createStore({
 const mockRouter = {
     push: jest.fn()
 }
-describe('In Dashboard Component Component', () => {
+describe('In Dashboard', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(searchResults,{

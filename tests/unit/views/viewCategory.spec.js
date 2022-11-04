@@ -12,7 +12,7 @@ const store = createStore({
     getters:mockGetters,
 });
 
-describe('In Dashboard Component Component', () => {
+describe('In View Category', () => {
     let wrapper;
     beforeEach(() => {
         wrapper = shallowMount(viewCategory,{

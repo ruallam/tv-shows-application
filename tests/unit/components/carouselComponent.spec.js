@@ -14,7 +14,7 @@ const store = createStore({
     state() { return mockState }
 });
 
-describe('In panel Component', () => {
+describe('In carousel Component', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(carouselComponent, {

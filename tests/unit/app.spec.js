@@ -16,7 +16,7 @@ const router = createRouter({
   history: createMemoryHistory(),
   routes
 })
-describe('In App Component', () =>{
+describe('In App.vue', () =>{
   let appWrapper
   beforeEach(()=> {
     appWrapper = mount(App, {
@@ -52,7 +52,7 @@ describe('In App Component', () =>{
   
 })
 
-describe('testing for false condition', () => {
+describe('testing for error=false condition', () => {
   let mockState1= {error:true};
   const store1 = createStore({
     state() {return mockState1}

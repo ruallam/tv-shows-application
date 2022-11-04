@@ -3,7 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 import mockedData from '../mockedData/mocked-data'
 import cardComponent from '@/components/cardComponent'
 
-describe('In panel Component', () => {
+describe('In Panel Component', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(panelComponent, {
@@ -30,7 +30,6 @@ describe('In panel Component', () => {
     });
 
     it("It loads Panel Component with Show Data", () => {
-        // wrapper.vm.onStart();
         expect(wrapper.vm.showsList.length).toEqual(3);
     });
 })

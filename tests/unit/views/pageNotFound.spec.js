@@ -2,7 +2,7 @@ import pageNotFound from "@/views/PageNotFound"
 import { shallowMount } from '@vue/test-utils'
 
 
-describe('Header Component', () => {
+describe('In page not found', () => {
     const wrapper = shallowMount(pageNotFound)
 
     it('renders props.msg when passed', () => {

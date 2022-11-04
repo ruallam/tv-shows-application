@@ -13,11 +13,11 @@ describe('In getters', () => {
         state = null
     })
 
-    it('in getters it should do something', ()=> {
+    it('in getters it should show data', ()=> {
         const expected = getters.getShowsByCat(state)('Drama');
         expect(expected).toEqual([mockedShowData])
     })
-    it('in getters it should do something', ()=> {
+    it('in getters it should not show data', ()=> {
         const expected = getters.getShowsByCat(state)('Action');
         expect(expected).toEqual([])
     })

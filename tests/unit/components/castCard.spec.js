@@ -9,7 +9,7 @@ const store = createStore({
   state() {return mockState}
 });
 
-describe('In panel Component', () => {
+describe('In cast card Component', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(castCard, {

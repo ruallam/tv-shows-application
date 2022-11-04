@@ -17,7 +17,7 @@ const store = createStore({
 const mockRouter = {
     push: jest.fn()
 }
-describe('In Dashboard Component', () => {
+describe('In Dashboard', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(dashboardPage,{

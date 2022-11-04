@@ -5,8 +5,8 @@ import httpClient from '@/services/common/index.js';
 
 jest.mock("@/services/common/index.js");
 
-describe("In services, ", () => {
-    it("should return List of shows when getShows", async () => {
+describe("In services", () => {
+    it("should return List of shows when getShowsByKeyword", async () => {
         const mockedData = [{ show: 1 }, { show: 2 }, { show: 3 }];
         httpClient.get.mockResolvedValue({ data: mockedData });
         const result = await ServicesFile.getShowsByKeyword("Arrow").catch(err =>
@@ -15,7 +15,7 @@ describe("In services, ", () => {
         expect(result).toEqual(mockedData);
     });
 
-    it("getShowsByKeyword api should throw error when any error encountered", async () => {
+    it("should throw error when any error encountered in getShowsByKeyword api ", async () => {
         const error = new Error("Async error");
         httpClient.get.mockRejectedValue(error);
         await ServicesFile.getShowsByKeyword("keyword").catch(err => {
@@ -23,14 +23,14 @@ describe("In services, ", () => {
         });
     });
 
-    it("getShows api should call", async () => {
+    it("should return List of shows when getShows API is called", async () => {
         const mockedData = [{ show: 1 }, { show: 2 }, { show: 3 }];
         httpClient.get.mockResolvedValue({ data: mockedData });
         const expectedResult = await ServicesFile.getShows().catch(err => console.log(err));
         expect(expectedResult).toEqual(mockedData);
     });
 
-    it("getShows api should throw error when any error encountered", async () => {
+    it("should throw error when any error encountered in getShows api", async () => {
         const error = new Error("Async error");
         httpClient.get.mockRejectedValue(error);
         await ServicesFile.getShows().catch(err => {
@@ -38,14 +38,14 @@ describe("In services, ", () => {
         });
     });
 
-    it("getShowById api should call", async () => {
+    it("should call getShowById api", async () => {
         const mockedData = { id: "1", name: "Iron Man" };
         httpClient.get.mockResolvedValue({ data: mockedData });
         const result = await ServicesFile.getShowById(1).catch(err => console.log(err));
         expect(result).toEqual(mockedData);
     });
 
-    it("getShowById api should throw error when any error encountered", async () => {
+    it("should throw error when getShowById api encountered error", async () => {
         const error = new Error("Async error");
         httpClient.get.mockRejectedValue(error);
         await ServicesFile.getShowById(1).catch(err => {
@@ -53,14 +53,14 @@ describe("In services, ", () => {
         });
     });
 
-    it("getImageById api should call", async () => {
+    it("should call getImagesById api", async () => {
         const mockedData = { id: "1", name: "Iron Man" };
         httpClient.get.mockResolvedValue({ data: mockedData });
         const result = await ServicesFile.getImagesById(1).catch(err => console.log(err));
         expect(result).toEqual(mockedData);
     });
 
-    it("getImageById api should throw error when any error encountered", async () => {
+    it("should throw error when getImageById api encountered error", async () => {
         const error = new Error("Async error");
         httpClient.get.mockRejectedValue(error);
         await ServicesFile.getImagesById(1).catch(err => {
@@ -68,14 +68,14 @@ describe("In services, ", () => {
         });
     });
 
-    it("getCastById api should call", async () => {
+    it("should call getCastById api", async () => {
         const mockedData = { id: "1", name: "Iron Man" };
         httpClient.get.mockResolvedValue({ data: mockedData });
         const result = await ServicesFile.getCastById(1).catch(err => console.log(err));
         expect(result).toEqual(mockedData);
     });
 
-    it("getCastById api should throw error when any error encountered", async () => {
+    it("should throw error when getCastById api encountered error", async () => {
         const error = new Error("Async error");
         httpClient.get.mockRejectedValue(error);
         await ServicesFile.getCastById(1).catch(err => {

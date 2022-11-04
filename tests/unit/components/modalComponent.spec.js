@@ -3,7 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 import castCardComponent from '@/components/castCard'
 
 
-describe('In panel Component', () => {
+describe('In modal Component', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallowMount(modalComponent)
