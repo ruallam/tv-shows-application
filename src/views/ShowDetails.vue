@@ -1,4 +1,11 @@
 <template>
+    <div v-if="isLoading" class="text-center">
+            <div class="spinner-border m-5" role="status">
+                <span class="visually-hidden spinner">Loading...</span>
+            </div>
+    </div>
+    <div v-else>
+
     <div class="container" v-if="!error && show">
         <div>
             <img :src="displayImage(show)" alt="image" align="left" />
@@ -24,6 +31,8 @@
             <p v-html="show.summary" class="text-justify"></p>
         </div>
     </div>
+</div>
+
 </template>
 
 <script>
@@ -31,8 +40,13 @@ import { mapActions, mapState } from 'vuex';
 import ModalComponent from '@/components/ModalComponent.vue';
 export default {
     name: 'ShowDetails',
+    data() {
+        return {
+            isLoading: true
+        }
+    },
     computed: {
-        ...mapState(["show", "error"]),
+        ...mapState(["show", "error"])
     },
     components: {
         ModalComponent
@@ -43,9 +57,10 @@ export default {
             return show?.image?.original || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTax9rQ-FuuaF4BvPj3GHIhMYriMIhujaOfkQ&usqp=CAU";
         }
     },
-    created() {
+    async created() {
         this.id = this.$route.params.id;
-        this.getShowById(this.id);
+        await this.getShowById(this.id);
+        this.isLoading = false
     }
 }
 </script>
@@ -58,6 +73,15 @@ img {
     border-radius: 10px;
     margin-top: 0px;
 }
+
+.spinner {
+    height: 350;
+    width: 20rem;
+    margin: 10px;
+    border-radius: 10px;
+    margin-top: 0px;
+}
+
 
 .text-justify {
     text-align: justify;

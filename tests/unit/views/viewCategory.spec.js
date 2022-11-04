@@ -3,27 +3,40 @@ import { shallowMount } from '@vue/test-utils'
 import {mockedShowData} from '../mockedData/mocked-data'
 import { createStore } from 'vuex'
 
-
-
-let mockGetters = {
-    getShowsByCat: () => [mockedShowData,mockedShowData,mockedShowData]
+let getters = {
+    getShowsByCat: (genreName) => jest.fn()
 };
 const store = createStore({
-    getters:mockGetters,
+    getters,
 });
+
+const mockRoute = {
+    params: {
+      genreName:'Action'
+    }
+}
+
+const mockRouter = {
+    push: jest.fn()
+}
 
 describe('In View Category', () => {
     let wrapper;
     beforeEach(() => {
         wrapper = shallowMount(viewCategory,{
             global:{
-                plugins:[store]
+                plugins:[store],
+                mocks: {
+                    $route: mockRoute,
+                    $router: mockRouter
+                }
             },
             data() {
                 return{
                     categoryName: ""
                 }
-            }
+            },
+            
         })
     })
     afterEach(() => {

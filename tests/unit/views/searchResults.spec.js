@@ -4,9 +4,10 @@ import {mockedShowData} from '../mockedData/mocked-data'
 import { createStore } from 'vuex'
 
 let mockState = {searchedShows:[{show:mockedShowData},{show:mockedShowData},{show:mockedShowData}]}
-
+let mockActions = {getSearchResults:jest.fn()}
 const store = createStore({
-    state() {return mockState}
+    state() {return mockState},
+    actions: mockActions
   });
 
 

@@ -19,6 +19,6 @@ describe('In getters', () => {
     })
     it('in getters it should not show data', ()=> {
         const expected = getters.getShowsByCat(state)('Action');
-        expect(expected).toEqual([])
+        expect(expected).toEqual(undefined)
     })
 })

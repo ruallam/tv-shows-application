@@ -9,7 +9,6 @@ const store = createStore({
     state() {return mockState}
   });
 
-
   const mockRoute = {
     params: {
       id: 1

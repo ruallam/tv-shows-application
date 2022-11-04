@@ -1,5 +1,5 @@
 export default {
-    showsCategorized: [],
+    showsCategorized: null,
     searchedShows: [],
     error: false,
     randomCarouselShows: [],

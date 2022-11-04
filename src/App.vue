@@ -13,7 +13,7 @@
 <script>
 import HeaderComponent from './components/HeaderComponent.vue';
 import PageNotFound from './views/PageNotFound.vue';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
   name: 'App',
   components: {
@@ -22,6 +22,12 @@ export default {
   },
   computed: {
     ...mapState(["error"]),
+  },
+  methods:{
+    ...mapActions(["getShows"]),
+  },
+  created() {
+    this.getShows();
   }
 }
 </script>
