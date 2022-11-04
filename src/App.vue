@@ -13,7 +13,7 @@
 <script>
 import HeaderComponent from './components/HeaderComponent.vue';
 import PageNotFound from './views/PageNotFound.vue';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
   name: 'App',
   components: {
@@ -22,6 +22,12 @@ export default {
   },
   computed: {
     ...mapState(["error"]),
+  },
+  methods:{
+    ...mapActions(["getShows"]),
+  },
+  created() {
+    this.getShows();
   }
 }
 </script>
@@ -29,16 +35,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  /* text-align: center; */
-  /* color: #2c3e50; */
-  /* margin-top: 60px; */
 }
-/* .bgColour{
-  background-color: beige;
-} */
-
 body { 
     padding-top: 65px; 
 }

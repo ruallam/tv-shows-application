@@ -10,6 +10,7 @@
 import { mapState, mapActions } from 'vuex'
 import CardComponent from '@/components/CardComponent.vue'
 export default {
+    name:'SearchResults',
     data(){
         return{
             searchName:''
@@ -27,8 +28,6 @@ export default {
     async created(){
         this.searchName = this.$route.params.searchName
     }
-
-
 }
 </script>
 

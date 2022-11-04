@@ -11,6 +11,7 @@
 <script>
 import { mapMutations } from 'vuex'
 export default {
+    name:'PageNotFound',
     data(){
         return{
             errorMessage: 'Sorry! Something went wrong.'
@@ -21,7 +22,6 @@ export default {
         goToHome() {
             this.SET_ERROR_TO_FALSE();
             this.$router.push('/')
-
         }
     }
 }
@@ -31,7 +31,6 @@ export default {
 
 .container {
     margin-top: 10rem;
+    text-align: center;
 }
-    
-
 </style>
