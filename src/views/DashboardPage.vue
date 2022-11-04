@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import CarouselComponent from '@/components/CarouselComponent.vue';
 import PanelComponent from '../components/PanelComponent.vue';
 export default {
@@ -19,13 +19,9 @@ export default {
         CarouselComponent
     },
     methods: {
-        ...mapActions(["getShows"]),
         limitNoOfShows(showList) {
             return [...showList].splice(0, 6);
         },
-    },
-    created() {
-        this.getShows();
     },
     computed: {
         ...mapState(["showsCategorized"])
@@ -36,7 +32,7 @@ export default {
 
 <style scoped>
 .category {
-    margin: 17px;
+    margin: 5px;
     border-radius: 10px;
     box-shadow: 1px 3px 10px #000000 !important;
 }
